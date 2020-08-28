@@ -16,8 +16,8 @@ import (
 // type, getting past the linter means funneling through one of the exported const
 // values in this package.
 //
-//
-// For example, the code `os.Chmod(655)` produces file permissions | todo
+// For example, the code `os.Chmod(755)` produces file permissions "-wxrw--wt",
+// whereas the intended octal form `os.Chmod(0755)` produces "rwxr-xr-x".
 type mode = os.FileMode
 
 // 0) no permission
