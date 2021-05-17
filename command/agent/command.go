@@ -598,6 +598,7 @@ func (c *Command) AutocompleteFlags() complete.Flags {
 		"-vault-ca-path":                 complete.PredictAnything,
 		"-vault-cert-file":               complete.PredictAnything,
 		"-vault-key-file":                complete.PredictAnything,
+		"-vault-namespace":               complete.PredictAnything,
 		"-vault-tls-skip-verify":         complete.PredictNothing,
 		"-vault-tls-server-name":         complete.PredictAnything,
 		"-acl-enabled":                   complete.PredictNothing,
@@ -1446,6 +1447,11 @@ Vault Options:
 
   -vault-key-file=<addr>
     The path to the private key for Vault communication.
+
+  -vault-namespace=<namespace>
+    The Vault namespace used for the integration. This needs to be set on servers
+    and clients. Overrides the Vault namespace read from the VAULT_NAMESPACE environment
+    variable.
 
   -vault-tls-skip-verify=<token>
     Enables or disables SSL certificate verification.
